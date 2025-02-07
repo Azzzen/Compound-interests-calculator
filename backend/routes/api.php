@@ -32,6 +32,10 @@ Route::post('/simulate-interests', function (Request $request) {
 
 //extra routes
 
+// Cette route calcule les interets composés aussi, mais les noms de variables ne correspondent pas a la consigne, pour 
+// rendre le frontend completement scalable
+//elle revoie aussi de quoi visualiser la donnee.
+
 Route::post('/simulate-compound-interests', function (Request $request) {
     $xAxis = [];
     $seriesData = [];
@@ -69,6 +73,7 @@ Route::post('/simulate-compound-interests', function (Request $request) {
     ]);
 });
 
+//cette route calcule les interets simples
 Route::post('/simulate-simple-interests', function (Request $request) {
     $validated = $request->validate([
         'n1'  => 'required|numeric',
@@ -101,7 +106,7 @@ Route::post('/simulate-simple-interests', function (Request $request) {
         ],
     ]);
 });
-
+//cette route calcule la depreciation lineaire
 Route::post('/simulate-linear-depreciation', function (Request $request) {
     $validated = $request->validate([
         'n1'  => 'required|numeric',
@@ -139,7 +144,8 @@ Route::post('/simulate-linear-depreciation', function (Request $request) {
         ],
     ]);
 });
-
+//cette route calcule la depreciation lineaire en fonction d'un temps donne.
+//ex : Combien de temps avant que ma voiture perde la moitie de sa valeur ?
 Route::post('/simulate-linear-depreciation-time', function (Request $request) {
     $validated = $request->validate([
         'n1'  => 'required|numeric',

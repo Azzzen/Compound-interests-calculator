@@ -1,6 +1,6 @@
 # Compound-interests-calculator
 
-run project with ```./start_project.sh```
+Demarrer le projet : ```./start_project.sh```
 
 L'architecture du projet est une application web full-stack, avec une partie frontend en React et une partie backend en Laravel 8(PHP). 
 
